@@ -1,0 +1,26 @@
+
+.footer{
+    height: 100px;
+    width: 100vw;
+    background-color:#fef3e2 ;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0px;
+    
+    
+}
+.footer-content{
+    padding: 30px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.social-media{
+    font-size: 1.5em;
+    width: 200px;
+    margin-right: 20px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}

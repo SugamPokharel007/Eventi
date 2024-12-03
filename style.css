@@ -1,0 +1,40 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.outer-main {
+    margin-top: 70px;
+    width: 100vw;
+    display: flex;
+    
+}
+
+.main {
+    height: 80vh;
+   
+}
+.main-left{
+    width: 60vw;
+}
+.main-right{
+    width: 40vw;
+    
+}
+
+
+
+
+.main-text{
+    text-align: center;
+    padding: 100px;
+    font-size: 20px;
+}
+
+
+
+img{
+    height: 100%;
+    width: 100%;
+}
