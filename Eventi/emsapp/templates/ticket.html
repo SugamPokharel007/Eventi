@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Buy Tickets - Eventi{% endblock %}
+
+{% block content %}
+<section class="ticket-section" style="margin-top: 70px;">
+    <h1>Buy Tickets</h1>
+    <p>Select your event, fill in the details, and secure your spot today!</p>
+
+    <form class="ticket-form" method="POST" enctype="multipart/form-data" action="{% url 'buy_tickets' %}">
+        {% csrf_token %}
+        <label for="event">Select Event</label>
+        <select id="event" name="event" required>
+            <option value="" disabled selected>Choose an event</option>
+            <option value="workshop">Workshop</option>
+            <option value="concert">Concert</option>
+            <option value="sports">Sports Event</option>
+            <option value="community">Community Events</option>
+        </select>
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+        <label for="tickets">Number of Tickets</label>
+        <input type="number" id="tickets" name="tickets" placeholder="Enter quantity" min="1" max="10" required>
+
+        <div class="qr-code-section">
+            <p><strong>Scan QR Code for Payment:</strong></p>
+            <div class="qr-code-container">
+                <img class="qr-code" src="{% static 'img/qr.jpeg' %}" alt="QR Code for Payment">
+            </div>
+        </div>
+
+        <div class="paymentproof-section">
+            <label for="paymentproof_pic"><strong>Upload Payment Proof:</strong></label>
+            <input type="file" id="paymentproof_pic" name="paymentproof_pic" accept="image/*">
+        </div>
+
+        <button type="submit" class="submit-button">Buy Now</button>
+    </form>
+</section>
+{% endblock %}

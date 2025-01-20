@@ -5,11 +5,8 @@
     background-color:#fef3e2 ;
     display: flex;
     justify-content: space-between;
-    position: fixed;
-    bottom: 0px;
-    
-    
 }
+
 .footer-content{
     padding: 30px;
     padding-top: 10px;
@@ -24,3 +21,4 @@
     display: flex;
     justify-content: space-around;
 }
+

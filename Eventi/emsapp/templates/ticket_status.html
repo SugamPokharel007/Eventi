@@ -1,0 +1,26 @@
+<!-- ticket_status.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Ticket Status</title>
+</head>
+<body>
+    <h1>Your Tickets</h1>
+    
+    {% if tickets %}
+        <ul>
+            {% for ticket in tickets %}
+                <li>
+                    <strong>{{ ticket.title }}</strong> - 
+                    Status: {{ ticket.get_status_display }}<br>
+                    <em>Created at: {{ ticket.created_at }}</em>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You don't have any tickets yet.</p>
+    {% endif %}
+</body>
+</html>

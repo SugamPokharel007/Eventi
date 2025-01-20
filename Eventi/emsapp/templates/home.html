@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home | Eventi{% endblock %}
+{% block content %}
+<!-- Home-specific content goes here -->
+<main>
+        <div class="outer-main">
+            <div class="main main-left">
+                <div class="main-text">
+                    <span class="quote-mark">“</span>
+                    <p><span>Turning Moments into Memories,</span></p>
+                    <p>One Event at a Time.</p>
+                    <p><span>Your Vision, Our Mission</span></p>
+                    <p>Perfectly Crafted Celebrations.</p>
+                    <span class="quote-mark">”</span>
+                </div>
+                
+            </div>
+            <div class="main main-right">
+            <img style="height:100%; width:100%" src="{% static 'img/background-EMS.png' %}"> 
+        </div>
+        
+    </div>
+
+
+            <div class="about-container">
+                <!-- About Us Section -->
+                <div class="about-box">
+                    <h1>About Us</h1>
+                    <p>Welcome to <strong>Eventi</strong>, where your ideas take center stage and transform into extraordinary experiences! We excel in crafting unforgettable moments tailored to your vision. Whether you're orchestrating dynamic <strong>conferences</strong> for professional growth, interactive <strong>workshops</strong> to ignite learning, electrifying <strong>concerts</strong> showcasing live performances, exhilarating <strong>sports events</strong> filled with competitive spirit, or heartwarming <strong>community events</strong> that bring people together, we are dedicated to making every detail flawless. At Eventi, we blend creativity, precision, and passion to ensure your event leaves a lasting impression and becomes a cherished memory. Let us redefine what’s possible and turn your ideas into spectacular realities!</p>
+                </div>
+    
+                <!-- Our Mission Section -->
+                <div class="mission-box">
+                    <h2>Our Mission</h2>
+                    <p>"Turning moments into memories, one event at a time."</p>
+                    <p>At Eventi, we aim to provide exceptional event management services tailored to your needs. Your vision is our mission, and our team is dedicated to bringing your dreams to life with creativity, innovation, and flawless execution.</p>
+                    <div class="about-image">
+                    <img " src="{% static 'teamems.jpeg' %}"> 
+
+                        <img src="{% static "img/bg.jpeg" %}" alt="Team Eventi">
+                    </div>
+                </div>
+            </div>
+    </main>
+
+{% endblock %}

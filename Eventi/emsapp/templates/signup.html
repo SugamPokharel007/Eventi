@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+  <header>
+    <img src="{% static '/img/logo.png' %}" alt="Company Logo">
+    Sign Up
+  </header>
+
+  <div class="signup-container">
+    <h2>Create Your Account</h2>
+
+    <!-- Add form tag -->
+    <form method="POST" action="{% url 'signup' %}">
+      
+        {% csrf_token %}
+      
+      <div class="input-container">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" placeholder="Enter your first name" name="first_name">
+      </div>
+
+      <div class="input-container">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" placeholder="Enter your Last name" name="last_name">
+      </div>
+
+      <div class="input-container">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Enter your email" name="email">
+      </div>
+
+      <div class="input-container">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create a password" name="password">
+      </div>
+
+      <div class="input-container">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" placeholder="Confirm your password" name="cpassword">
+      </div>
+
+      <button class="btn-signup" type="submit">Sign Up</button>
+    </form>
+    
+    <div class="login">
+      Already have an account? <a href="{% url 'login' %}">Log in</a>
+    </div>
+
+    <div class="social-login">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="30" onclick="location.href='https://facebook.com'">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" width="30" onclick="location.href='https://google.com'">
+    </div>
+  </div>
+</body>
+</html>

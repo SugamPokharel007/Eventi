@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Confirmation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .ticket-container {
+            border: 2px dashed #70c457;
+            padding: 20px;
+            background-color: #ffffff;
+            max-width: 500px;
+            margin: 50px auto;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+        }
+        .ticket-container h1 {
+            color: #2d89ef;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .ticket-details {
+            margin: 20px 0;
+            text-align: left;
+            line-height: 1.6;
+        }
+        .ticket-details p {
+            font-size: 18px;
+            margin: 8px 0;
+            color: #555;
+        }
+        .ticket-details p strong {
+            color: #000;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+        .footer a {
+            color: #2d89ef;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket-container">
+        <h1>🎫 Ticket Details</h1>
+        {% if ticket.payment_approved %}
+            <div class="ticket-details">
+                <p><strong>Name:</strong> {{ ticket.name }}</p>
+                <p><strong>Event Type:</strong> {{ ticket.dropdown_option }}</p>
+                <p><strong>Number of Tickets:</strong> {{ ticket.quantity }}</p>
+            </div>
+            <div class="footer">
+                Thank you for your booking! 🎉<br>
+                <a href="{% url 'home' %}">Return to Homepage</a>
+            </div>
+            {% else %}
+            <div style="color: #f1c40f; background-color: #f9e5a1; padding: 10px; border-radius: 5px;">
+                <p><strong>Your ticket is pending approval. Please check back later.</strong></p>
+            </div>
+            <a href="{% url 'home' %}" class="btn" style="text-decoration: none; color: #fff; background-color: #2d89ef; padding: 10px 20px; border-radius: 5px; display: inline-block; margin-top: 20px;">Return to Homepage</a>
+        {% endif %}
+        
+    </div>
+    
+</body>
+</html>

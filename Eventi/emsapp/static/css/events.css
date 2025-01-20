@@ -1,0 +1,91 @@
+/* General Container */
+.container {
+    margin: 20px auto;
+    padding: 0 15px;
+    max-width: 1200px;
+}
+
+/* Section Titles */
+.event-title {
+    margin-top: 70px;
+    text-align: center;
+    background-color: yellow;
+    padding: 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 28px;
+    border-radius: 8px;
+}
+
+/* Event Section */
+.event-section {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff8dc;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Event Images */
+.event-images {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.event-images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Description */
+.event-description {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333333;
+    margin: 20px 0;
+}
+
+/* Buttons */
+.event-button {
+    display: inline-block;
+    background-color: #f4d680;
+    color: #333333;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.event-button:hover {
+    background-color: #e8c76f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .event-images {
+        flex-direction: column;
+    }
+
+    .event-images img {
+        max-width: 90%;
+    }
+
+    .event-button {
+        margin: 20px auto;
+    }
+}
+
+.event-price {
+    font-size: 1.2em;
+    color: #ff6600; /* Orange color */
+    font-weight: bold;
+    margin: 10px 0;
+}

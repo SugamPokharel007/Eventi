@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+  <header>
+    <img src="{% static '/img/logo.png' %}" alt="Company Logo">
+    Event Management System
+  </header>
+
+  <div class="login-container">
+    <h2>Please Login</h2>
+
+    <!-- Add form tag -->
+    <form method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
+      
+      <div class="input-container">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="input-container">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+      </div>
+
+      <button class="btn-login" type="submit">Log In</button>
+    </form>
+
+    <div class="signup">
+      Don't have an account? <a href="{% url 'signup' %}">Sign up</a>
+    </div>
+
+    <div class="social-login">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="30" onclick="location.href='https://facebook.com'">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" width="30" onclick="location.href='https://google.com'">
+    </div>
+  </div>
+</body>
+</html>

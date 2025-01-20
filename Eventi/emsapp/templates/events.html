@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Events - Eventi{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% for event in events %}
+    <h1 class="event-title">{{ event.category }}</h1>
+    <div class="event-section">
+        <div class="event-images">
+            <img src="{{ event.image1.url }}" alt="{{ event.title }} Image 1">
+            <img src="{{ event.image2.url }}" alt="{{ event.title }} Image 2">
+        </div>
+        <p class="event-description">{{ event.description }}</p>
+        <p class="event-price">Price: Rs {{ event.price }}</p>
+        <a class="event-button" href="{% url 'ticket' %}">Buy Ticket</a>
+        <p class="event-date-time">Date: {{ event.event_date }} | Time: {{ event.event_time }}</p>
+        
+        <!-- Share Buttons -->
+        <div class="share-buttons">
+            <p>Share this event:</p>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank">
+                <i class="fab fa-facebook-square"></i>
+            </a>
+            <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text=Check%20out%20this%20event" target="_blank">
+                <i class="fab fa-twitter-square"></i>
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:?subject=Event%20Sharing&body=Check%20out%20this%20event:%20{{ request.build_absolute_uri }}" target="_blank">
+                <i class="fas fa-envelope"></i>
+
+            {% comment %} <a href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i> {% endcomment %}
+                </a>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

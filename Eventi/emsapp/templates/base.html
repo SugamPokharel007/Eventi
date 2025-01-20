@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Eventi{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/events.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img style="height: 60px;" src="{% static 'img/logo.png' %}"> 
+        </div>
+        <ul class="nav-middle">
+            <li class="nav-content"><a href="{% url 'home' %}">Home</a></li>
+            <li class="nav-content"><a href="{% url 'events' %}">Events</a></li>
+            {% comment %} <li class="nav-content"><a href="{% url 'portfolio' %}">Portfolio</a></li> {% endcomment %}
+            <li class="nav-content"><a href="{% url 'ticket' %}">Tickets</a></li>
+            <li class="nav-content"><a href="{% url 'about' %}">About Us</a></li>
+            <li class="nav-content"><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="logout nav-button">Logout</button>
+            </form>l
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}
+        <!-- Default content goes here -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            <div class="footer-content"><i class="fa-regular fa-copyright"></i> Eventi's developer Team</div>
+            <div class="footer-content">Follow us on
+                <div class="social-media"> 
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="30" onclick="location.href='https://facebook.com'">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="30" height="30" onclick="location.href='https://instagram.com'" style="cursor:pointer;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="30" height="30" onclick="location.href='https://linkedin.com'" style="cursor:pointer;">
+                    {% comment %} <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/TikTok_logo.png" alt="TikTok" width="30" height="30" onclick="location.href='https://tiktok.com'" style="cursor:pointer;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Twitter_Logo.svg" alt="X" width="30" height="30" onclick="location.href='https://x.com'" style="cursor:pointer;"> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
